@@ -40,3 +40,69 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2020-11-14 22:02:16.589418"], ["updated_at", "2020-11-14 22:02:16.589418"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2020-11-14 14:04:48 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/Jillian/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Jillian/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (5.6ms)
+Completed 200 OK in 27ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts.new" for ::1 at 2020-11-14 14:04:52 -0800
+Processing by PostsController#index as 
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 400ms (Views: 387.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-11-14 14:04:56 -0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-11-14 14:05:10 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IUW6ef9XPxbs1bCag5BNRP8mssLtWFeUw0rJ85Whnk+2AxyFZGNss+yEt/KZYTZaWMn43tHgawAs0dOwx8s+0A==", "title"=>"Red Baron", "description"=>"It was a dark and stormy night...", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Red Baron"], ["description", "It was a dark and stormy night..."], ["created_at", "2020-11-14 22:05:10.767526"], ["updated_at", "2020-11-14 22:05:10.767526"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 27ms (ActiveRecord: 3.6ms)
+
+
+  [1m[36mPost Load (3.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/posts/new" for ::1 at 2020-11-14 14:15:57 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 404ms (Views: 386.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for ::1 at 2020-11-14 14:16:10 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OIksz21E7+BeTAv9HIuna4tDfLC8l52bDD2Mify81Q+vz4oz9nC8RV4dDJUGetx1LKw2rIAvoQ/jppbKrtZ1kA==", "title"=>"Buster", "description"=>"Chronicles of a Weiner Dog", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Buster"], ["description", "Chronicles of a Weiner Dog"], ["created_at", "2020-11-14 22:16:10.554703"], ["updated_at", "2020-11-14 22:16:10.554703"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 5ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/posts/4" for ::1 at 2020-11-14 14:16:10 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 24.2ms | ActiveRecord: 0.2ms)
+
+
