@@ -40,3 +40,60 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2020-11-23 14:39:37.114689"], ["updated_at", "2020-11-23 14:39:37.114689"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/posts/new" for ::1 at 2020-11-23 09:43:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 872ms (Views: 780.0ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/posts" for ::1 at 2020-11-23 09:43:29 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HoKRPOwlZ77sUW4eKPcbu0M3in4UhqjpqL19tZWKJcNTikeMwoEzAhDKSAojO0vkGpAiO22bz3/HM074qtZJRg==", "title"=>"blah", "description"=>"bleh", "commit"=>"Submit Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "blah"], ["description", "bleh"], ["created_at", "2020-11-23 14:43:29.986124"], ["updated_at", "2020-11-23 14:43:29.986124"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 60ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-11-23 09:44:42 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-11-23 09:44:43 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+MWwb6PYtQTWgobXtyoSjFiXPGikO8BUkA44M8vS9HC1zWbfjXzhuCoZoMO85kLTATCULd0mp8L/gAt+9I6Y9Q==", "title"=>"", "description"=>"", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["description", ""], ["created_at", "2020-11-23 14:44:43.584082"], ["updated_at", "2020-11-23 14:44:43.584082"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 36ms (ActiveRecord: 2.9ms)
+
+
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/posts/new" for ::1 at 2020-11-23 10:12:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 680ms (Views: 644.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/posts" for ::1 at 2020-11-23 10:13:04 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rNKN3vptS4+BrS7zsbWR/DwOPb+EAQnoPYoizxigHwLh2ltu1MkfM302COe6ecGjZamV+v0cbn5SBBGCJ/xzhw==", "title"=>"some titel", "description"=>"some desc", "commit"=>"Submit Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "some titel"], ["description", "some desc"], ["created_at", "2020-11-23 15:13:04.959345"], ["updated_at", "2020-11-23 15:13:04.959345"]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 89ms (ActiveRecord: 9.1ms)
+
+
